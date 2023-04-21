@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jOB Create</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/employercreate.css' %}"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<div class="border">
+<div class="row">
+    <div class="col">
+<div  id="job-margin" class="card" style="width:25rem;">
+            <div class="card-body">
+                <h3>Form</h3>
+                <hr>
+<form method="post" action="">
+  {% csrf_token %}
+  {{form.as_p}}
+    <p style="color:red">* Make sure everything is correct</p>
+  <input class="btn btn-outline-primary" type="submit" value="submit">
+<br><br>
+</form><a href="/list"><button class="btn btn-info" type="submit">cancel</button></a></div></div></div></div>
+{% endif %}
+</body>
+</html>

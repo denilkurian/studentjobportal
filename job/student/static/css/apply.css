@@ -1,0 +1,14 @@
+.applied {
+
+  border: 1.5px solid black;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  margin-right: 400px;
+  margin-left: 500px;
+
+  background-color: white;
+  padding:30px;
+  border-radius:1%;
+}
+
+

@@ -1,0 +1,283 @@
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+.dark-mode-btn {
+color:white;
+background-color:black;
+  font-size: 12px;
+   position: absolute;
+  top: 4%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  padding: 6px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+
+
+}
+
+.dark-mode-btn:hover{
+background-color:#4c5259;
+}
+
+
+.footers {
+
+  text-align: center;
+  padding: 20px;
+  background-color: #0a0a0a;
+  color:white;
+  border:3px white;
+
+}
+
+.img {
+width:250px;
+border-radius: 60%;
+}
+
+
+
+.big-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.big-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.big-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.big-button:hover span {
+  padding-right: 25px;
+}
+
+.big-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 3.5%;
+  left: 1.7%;
+  transform: translate(-50%, -50%);
+
+}
+
+table, th{
+  border: 0px solid black;
+  border-collapse: collapse;
+}
+th {
+  padding-top:20px;
+  padding-bottom: 20px;
+  padding-left: 13.7px;
+  padding-right: 10px;
+}
+
+.table-position {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box5 {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 100px auto;
+  padding: 50px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height:400px;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box5{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 150px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: lightblue;
+  color: lightblue;
+}
+
+.flip-box-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+#btn-employee:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+
+
+#btn-employer:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+
+
+
+.saved {
+color:#17a2b8;
+font-size:20px;
+  position: absolute;
+  top: 4%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+
+}

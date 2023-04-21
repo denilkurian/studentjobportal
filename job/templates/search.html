@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search results displayed here</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}"/>
+
+</head>
+<body style="background-color:#e4e4fd;">
+
+
+    {% if request.user.is_authenticated %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="/">CareerBuddy</a>
+
+    </div><a href="/findjob"><button class="btn btn-light">GoBack</button></a>
+  </div>
+</nav>
+
+<br>
+
+    <center><h3 style="font-family:georgia;">Search Results</h3></center>
+<hr>
+<center><p>Click to go to the page</p></center>
+     {% for every in object_list %}
+<div class="result">
+
+    <center><a href="{% url 'jobdetail' every.pk %}"><p class="results">{{ every.company }}</p></a></center>
+    </div>
+{% empty %}
+    <center><h4 style="color:red">Oops Nothing Found !! Try Again</h4>
+    <img src="data:image/png;base64,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" width="100px">
+</center>
+
+{% endfor %}
+
+{% endif %}
+</body>
+</html>

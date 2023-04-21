@@ -1,0 +1,169 @@
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      ×
+      </button>
+      <strong>{{message}}</strong>
+    </div>
+ {% endfor %}
+{% endif %}
+
+
+
+
+
+
+
+
+
+  background-color: red;
+ border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+    border-radius: 45%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['profile'] = context['profile'].filter(user=self.request.user)
+        return context
+
+
+
+<li style="color:white;" class="active">Hii {{ user }},you can create,edit  profile here..</li></ul>
+<a href="/profile-create"><button class="btn btn-success">Create</button></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center><h4 style="color:blue">Currently Posted Jobs are Listed Here Successfully</h4>
+<b style="color:red">Caution:This post is visible to public</b></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applied Jobs</title>
+         <link rel="stylesheet" type="text/css" href="{% static 'css/apply.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="/">CareerBuddy</a>
+        <ul class="nav navbar-nav">
+
+        </ul>
+
+
+    </div><a href="/homepage"><button class="btn btn-light">GoBack</button></a>
+  </div>
+</nav>
+
+<br>
+
+<center><h2 style="font-family:georgia;"><u>Hii {{ user }} Applied Jobs are listed below</u></h2></center>
+
+{% for every in object_list %}
+        {% if every.complete == True %}
+<div class="applied">
+<h3>{{every.role}}</h3>
+<p>{{every.company}}</p>
+    <a href="{% url 'jobdetail' every.id %}"><button class="btn btn-info">Details</button></a>
+<br><br>
+  <a href="{% url 'update' every.pk %}"><p style="color:red;">Remove Application</p></a></div>
+{% endif %}
+{% endfor %}
+
+{% endif %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+class update(UpdateView):
+    model = Jobs
+    fields = ['complete']
+    template_name = 'update.html'
+    success_url = reverse_lazy('applied')
+
+class Applied(ListView):
+    model = Jobs
+    template_name = 'applied-jobs.html'
+
+
+
+
+
+

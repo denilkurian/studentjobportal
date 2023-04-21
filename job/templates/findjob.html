@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job page</title>
+
+
+
+
+
+     <link rel="stylesheet" type="text/css" href="{% static 'css/findjob.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+ <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+    </script>
+
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+    </script>
+
+    <link href=
+"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" />
+
+
+
+        <style>
+        .dark-mode {
+  background-color: black;
+  color: black;
+}
+
+
+.dark-mode-btn {
+color:white;
+background-color:black;
+  font-size: 12px;
+   position: absolute;
+  top: 4%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  padding: 6px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+
+
+}
+
+.nn{
+  position: fixed;
+  top: -2;
+  left: 0;
+  width: 100%;
+
+  z-index: 999;
+}
+
+    </style>
+
+
+
+</head>
+<body>
+      <script>
+        // Check if the user has a preference for dark mode
+        const prefersDarkMode = localStorage.getItem('prefers-dark-mode');
+
+        // If the user has a preference, set the dark mode class on the body
+        if (prefersDarkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle the dark mode when the button is clicked
+        const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+        toggleDarkModeButton.addEventListener('click', () => {
+            // Toggle the class on the body
+            document.body.classList.toggle('dark-mode');
+
+            // Save the user's preference to localStorage
+            localStorage.setItem('prefers-dark-mode', document.body.classList.contains('dark-mode'));
+        });
+    </script>
+
+
+{% if request.user.is_authenticated %}
+
+     <script>
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.querySelector('.nn');
+var sticky = nn.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    nn.classList.add("sticky")
+  } else {
+    nn.classList.remove("sticky");
+  }
+}
+</script>
+
+      <nav class="nn">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="/">CareerBuddy</a>
+         <ul class="nav navbar-nav">
+        <li style="color:white;" class="active">Hii {{ user }},latest jobs will be displayed here..</li></ul>
+
+    </div><a href="/homepage"><button class="btn btn-light">GoBack</button></a>
+  </div>
+</nav></nav>
+
+<br>
+
+      <br><br>
+<!--<nav class="navbar navbar-light bg-light" >-->
+     <div class="container-fluid">
+ <form class="form-inline" action="{% url 'search' %}" method="get">
+      {% csrf_token %}
+    <input type="search" id="tags"  name="q" class="form-control mr-sm-2" placeholder="Search Jobs,Company.." aria-label="Search" >
+      <script>
+  $( function() {
+    var availableTags = [
+        {% for every in object_list %}
+            "{{every.company}}",
+            "{{every.role}}",
+        {% endfor %}
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+
+<button title="Search" class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+
+  </form></div>
+<!--</nav>-->
+
+
+
+<hr>
+<div>
+<div class="container-fluid">
+<form action="{% url 'filter' %}" method="get" class="form-inline">
+  <label style="color:#0b7dda;" for="cars">Filter by Job Type:</label>
+  <select name="f" id="cars"  class="form-control mr-sm-2" >
+    <option   style="color:#0b7dda" value="Information Technology">Information Technology</option>
+    <option  style="color:#0b7dda" value="Business Management">Business Management</option>
+    <option style="color:#0b7dda" value="Accounting">Accounting</option>
+    <option style="color:#0b7dda" value="Health & Science">Health & Science</option>
+      <option style="color:#0b7dda" value="Architecture">Architecture</option>
+      <option style="color:#0b7dda" value="Sales Executive">Sales Executive</option>
+      <option style="color:#0b7dda" value="Education Careers">Education Careers</option>
+       <option style="color:#0b7dda" value="Production">Production</option>
+  </select>
+
+  <button title="Filter" class="btn btn-outline-primary"><i class="bi bi-filter-square-fill"></i></button>
+</form>
+</div>
+<br>
+
+
+
+
+
+
+  <div class="container-fluid">
+<div class="row">
+    {% for every in findjob %}
+
+ <div class="col">
+
+     <div  id="job-margin" class="card" style="width:25rem;">
+<div class="card-body">
+    <form method="post" action="{% url 'add_to_save' every.id %}">
+        {% csrf_token %}
+
+        <button title="Save"  class="btn btn-outline-info" type="submit"><i class="bi bi-bookmark-fill"></i></button>
+
+    </form>
+
+    <h4 style="color:blue;" class="card-title">{{ every.role }}</h4><hr>
+    <h5 class="card-text">Company : {{  every.company }}</h5>
+    <p>Location: {{ every.location }}</p>
+    <p>Salary: {{ every.salary }}</p>
+     <p style="font-family:Calibri Light">{{ every.duration }}</p>
+    <a href="{% url 'jobdetail' every.id %}" ><button class="btn btn-primary">Details</button></a>
+
+    {% if every.Hired == True %}
+    <a href="#" ><button class="btn btn-primary" disabled>Hired</button></a>
+        {% else %}
+    <a href="{% url 'add_review' every.id %}" ><button class="btn btn-primary">Apply</button></a>
+    {% endif %}
+
+
+
+
+</div>
+        </div><br>
+    </div>
+{% endfor %}
+
+
+
+{% else %}
+    <body>
+<div class="margin">
+    <center><h2 style="font-family:georgia">Login required&nbsp;<i class="bi bi-exclamation-diamond" style="color:red"></i></h2><br>
+    <a href="/signin"><button class="btn btn-success">Login</button></a>
+     </div>
+ <a href="/homepage"><i id="close" class="bi bi-x-circle-fill" style="font-size:39px"></i></a>
+</body>
+
+
+
+
+
+
+
+{% endif %}
+
+</body>
+</html>

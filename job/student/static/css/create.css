@@ -1,0 +1,128 @@
+.page{
+    display: flex;
+    gap: 150px;
+}
+.form{
+    margin-left: 300px;
+    background-color: cyan;
+    width: 900px;
+    padding-left:200px ;
+    padding-top:50px ;
+    padding-bottom: 50px;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-top: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+    margin-bottom: 23px;
+}
+#id_profile{
+    border-radius: 3px;
+    margin-left: 47px;
+}
+#id_name{
+    width: 295px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 47px;
+}
+input:focus {
+    outline: none;
+}
+#id_email{
+    width: 295px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #808080;
+    border-width: 1px;
+    margin-left: 50px;
+}
+#id_phone{
+    width: 294px;
+    border-radius: 10px;
+    height: 30px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 44px;
+}
+#id_address{
+    width: 293px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 35px;
+}
+#id_college{
+    width: 290px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 40px;
+}
+#id_cgpa{
+    width: 293px;
+    border-radius: 10px;
+    height: 30px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 55px;
+}
+#id_qualification{
+    width: 294px;
+    height: 25px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 5px;
+}
+#id_experience{
+    width: 290px;
+    height: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 17px;
+}
+#id_skills{
+    width: 290px;
+    height: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-left: 55px;
+}
+.save input{
+    width: 295px;
+    height: 35px;
+    margin-left: 50px;
+    border-style: none;
+    border-color: #808080;
+    background-color: rgb(21, 59, 246);
+    color: white;
+    border-radius: 6px;
+    font-size: 17px;
+}
+#id_resume{
+    border-radius: 3px;
+    margin-left: 40px;
+
+}
+
+#submit{
+    width:400px;
+
+}

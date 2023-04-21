@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>company</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+        #img {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#img:hover {
+  transform: scale(1.8);
+}
+
+.position {
+ border: 1.5px solid black;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  margin-right: 400px;
+  margin-left: 500px;
+
+  background-color: white;
+  padding:20px;
+  border-radius:1%;
+  }
+    </style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="/">CareerBuddy</a>
+
+
+        <ul class="nav navbar-nav"></ul>
+
+
+    </div> <a href="/homepage"><button class="btn btn-light">GoBack</button></a></div></nav>
+
+<center><h1 style="font-family:gabriola">Top Companies</h1></center>
+<br>
+<center><p>Some companies has been listed here,You can directly go to their website and apply job according to your qualification
+    .<br>If there any job vacancy available we post in our job portal. </p></center>
+
+<br>
+
+<div class="position">
+<div class="d-flex justify-content-around">
+<div class="container-fluid">
+
+       {% for every in company %}
+       <div class="col-md-2">
+
+&nbsp;&nbsp;
+
+            <center><div style="font-size:30px;font-family:georgia;">{{every.name}}</div></center>
+
+        <a href="{{ every.link }}" class="card-image-top"><img id="img" src="{{every.image}}" class="card-image-top"  width="100%"></a>
+</div></div></div>
+                {% endfor %}</div>
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>

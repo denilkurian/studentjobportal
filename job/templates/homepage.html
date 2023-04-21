@@ -1,0 +1,176 @@
+{% block body %}
+{% include 'navigation-bar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+         <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}"/>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+<script>
+document.getElementsByClassName("tablink")[0].click();
+
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
+}
+</script>
+
+
+<div style="color:blue">
+<marquee  width="60%" direction="left" height="50px">
+Contact:9207574484(Technical support 24*7 available)
+</marquee></div>
+
+<center>Hii {{ user }} How are you doin!</center>
+<br><br>
+{% if request.user.is_authenticated %}
+
+
+<a href="/save"><p title="Saved" class="saved"><i class="bi bi-bookmarks-fill"></i></p></a>
+
+<!--this javascript is used for count applied jobs-->
+<script>
+  // make an AJAX request to your Django view that returns the count of items in the cart
+  fetch('/cart/count')
+    .then(response => response.json())
+    .then(data => {
+      // update the count in the HTML
+      document.getElementById('cart-count').textContent = data.count;
+    })
+    .catch(error => {
+      console.error('Error fetching cart count:', error);
+    });
+</script>
+
+
+
+
+
+
+<div>
+	<center><a class="button" href="#popup1"><i style="color:#06aaf4;font-size:35px" class="bi bi-briefcase-fill"></i></a></center>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Hii i am</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+
+
+<!--        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLqqBbq3Ssp793ZyrgSUhabhwMUCPPQwGeyorZtk7pQTrmCYxvWljr3qeL6eSufH0YnVo&usqp=CAU" style="border-radius:0%;">-->
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLqqBbq3Ssp793ZyrgSUhabhwMUCPPQwGeyorZtk7pQTrmCYxvWljr3qeL6eSufH0YnVo&usqp=CAU" alt="Paris" style="width:300px;height:150px">
+    </div>
+    <div class="flip-box-back">
+<br>
+      <a style="color:blue" href="/findjob"><button id="btn-employee" style="font-size:17px" class="btn btn-light">Looking for a Job</button></a> <br><br> <a href="/list"><button id="btn-employer" class="btn btn-outline-primary">Looking for employee</button></a>
+    </div>
+  </div>
+</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+<p>&nbsp;</p>
+{% else %}
+
+    <a href="/signin"><center><button class="big-button" style="vertical-align:middle"><span>Login</span></button></center></a>
+{% endif %}
+
+
+
+
+<div class="image-quote">
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class="img" src="https://i.pinimg.com/originals/18/a4/94/18a4949fc9c8067172d3b96e302e7097.gif"></div>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Features</h3>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9989;Build your profile and let recruiters find you</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9989;Get job postings delivered right to your email</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#9989;Find a job and grow your career</p>
+
+
+<table>
+    <tr>
+
+         <th>&nbsp;&nbsp;</th>
+  <th><a href="#"><i  class="bi bi-instagram" title="Instagaram"></i></a></th>
+    <th><a href="#"><i class="bi bi-facebook" title="Facebook"></i></a></th>
+        <th><a href="#"><i class="bi bi-linkedin" title="Linkedin"></i></a></th>
+        <th><a href="#"> <i class="bi bi-twitter" title="Twitter"></i></a></th>
+    </tr>
+</table>
+
+
+
+
+
+
+<br><br>
+
+<!--dark mode section-->
+ <button title="Dark Mode" id="toggle-dark-mode"  class="dark-mode-btn" onclick="myFunction()"><i class="bi bi-brightness-high"></i></button>
+
+
+
+  <script>
+        // Check if the user has a preference for dark mode
+        const prefersDarkMode = localStorage.getItem('prefers-dark-mode');
+
+        // If the user has a preference, set the dark mode class on the body
+        if (prefersDarkMode === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle the dark mode when the button is clicked
+        const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+        toggleDarkModeButton.addEventListener('click', () => {
+            // Toggle the class on the body
+            document.body.classList.toggle('dark-mode');
+
+            // Save the user's preference to localStorage
+            localStorage.setItem('prefers-dark-mode', document.body.classList.contains('dark-mode'));
+        });
+    </script>
+
+
+
+
+<div class="footers">
+<footer>
+  <p>Created By : CareerBuddy Company<br>
+  <a href="https://in.images.search.yahoo.com/yhs/search;_ylt=Awrx.3b7VhVkYMcU8TfnHgx.;_ylu=Y29sbwMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=career+buddy+images&type=fc_ABF530B7983_s69_g_e_d052222_n0670_c4&param1=7&param2=eJw1i8GOgzAMRH%2FFx1aqgh2SAOHaL%2Bi16iFNUhoRCGqpWO3Xr5G29sFvPDNDCtf%2BdjkTomw6eT3dZtZoGmTcLdSSh4VnofimhUEq7KzCprYqoLOtlq312ktbB6etpEdrqcM9PsTC%2BTQzfhzTVH5Tzq7SAuGwpTmU7Q3zCoQCe%2BCHUT38GHUEtyw5bvE%2BprXSdSNqA4fxuU75BDmNEYbox3IE%2F3yVKVZEJHBfeLuHe6VvJYbh3yNjSCj1BwdfRVM%3D&hsimp=yhs-2461&hspart=fc&ei=UTF-8&fr=yhs-fc-2461">careerbuddy@gmail.com</a></p>
+    <p>Contact:9207574484,883456779</p><br>
+    <a href="/about"><p>About&nbsp;&nbsp;&nbsp;&nbsp;   Help center&nbsp;&nbsp;&nbsp;&nbsp;Browse Companies</p></a>
+    <a href="/about"><p>All rights reserved © 2023 CareerBuddy.&nbsp;&nbsp;&nbsp;&nbsp;   Terms & Conditions&nbsp;&nbsp;&nbsp;&nbsp;Cookies</p></a>
+</footer></div>
+</body>
+{% endblock %}
+</html>

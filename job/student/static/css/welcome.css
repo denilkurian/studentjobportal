@@ -1,0 +1,28 @@
+ .image {
+        opacity: .8;
+      }
+
+ #button {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+ .heading {
+ font-family:Bahnschrift Light;
+ color:blue;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+.quote{
+ font-family:Bahnschrift Light;
+ color:white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }

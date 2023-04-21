@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <style>
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+.anm {
+  text-align:center;
+  font-family:'Roboto';
+  font-weight:300;
+  font-size:32px;
+  padding-top:10vh;
+  height:25vh;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+div:first-of-type {    /* For increasing performance
+                       ID/Class should've been used.
+                       For a small demo
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+div:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+
+p {
+  font-size:12px;
+  color:#999;
+  margin-top:200px;
+}
+
+
+.btn1{
+
+position:absolute;
+top:90%;
+right:-9%;
+border: 25px;
+padding: 10px 32px;
+}
+
+.btn1:hover {
+
+  color: blue;
+}
+
+
+
+.btn3 {
+position:absolute;
+top:165%;
+right:5%;
+border: 25px;
+padding: 10px 32px;
+}
+
+.btn3:hover {
+
+  color: blue;
+
+}
+
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  z-index: 999;
+}
+
+    </style>
+
+
+</head>
+<body>
+{% if request.user.is_authenticated %}
+
+<nav class="navbar">
+<nav class="navbar navbar-dark bg-dark">
+
+    <a href="/homepage"><button class="btn btn-light">Go Back</button></a>
+ </nav></nav>
+
+<br>
+<div class="anm">
+<div style="color:blue">&nbsp; &nbsp; CareerBuddy</div>
+    <div>
+
+  <span style="color:red">The Best Choice</span>
+</div>
+</div>
+
+<section class="container">
+    <section class="col">
+<section style="color:black" ><h7>
+     <b>About</b>
+    <hr>
+    CareerBuddy is an online job portal designed to provide users with a hassle-free job search experience.
+    Whether you're a fresh graduate or an experienced professional, CareerBuddy offers a wide range of job opportunities from various industries to cater to your specific needs.
+
+To get started with CareerBuddy, simply create a profile by filling out your personal
+    details and uploading your resume. This will enable you to apply for job openings and receive job alerts based on your qualifications and preferences.
+
+In addition to job listings, CareerBuddy also provides resources and tools to help you
+    enhance your job search. The platform offers tips on resume writing, cover letter creation, and interview preparation to improve your chances of landing your dream job.
+
+CareerBuddy also features a user-friendly interface that allows you to filter job
+    listings based on location, salary, and job type. You can also save job listings for future reference and apply for multiple jobs simultaneously.
+
+Furthermore, CareerBuddy is committed to safeguarding your personal information
+    and ensuring the security of your data. The platform adheres to the highest data privacy and security standards to protect your information from unauthorized access or use.
+
+In case you encounter any issues or have any queries, CareerBuddy offers a comprehensive help section with frequently asked questions, troubleshooting tips, and how-to guides. Our customer support team is also available to assist you and address your concerns promptly.
+
+At CareerBuddy, we believe that everyone deserves a fulfilling career, and we strive to make job searching as easy and convenient as possible. Join us today and let us help you find your career path.
+
+<button onclick="scrolling();"  class="btn1"><i class="bi bi-chevron-double-down"></i></button>
+</h7>
+</section></section></section>
+
+<br><br><br><br><br><br><br><br>
+
+<section class="container">
+
+    <h5>Terms and Conditions</h5>
+    <hr>
+    Before using our services, please take a few minutes to review the following terms and conditions. By using our app or website, you agree to comply with and be bound by these terms.
+
+Eligibility: You must be at least 18 years old to use our services. If you are under 18, you may only use our app or website with the consent of a parent or legal guardian.
+
+Account Creation: To use our services, you must create an account by providing accurate and complete information about yourself. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.
+
+Job Listings: We strive to provide accurate and up-to-date job listings, but we do not guarantee the accuracy, completeness, or reliability of any job posting or information on our app or website. You are solely responsible for evaluating and verifying the information provided in job listings.
+
+User Conduct: You agree not to use our services for any illegal or unauthorized purpose. You also agree not to interfere with or disrupt our app or website or any servers or networks connected to our services.
+
+Privacy: We take your privacy seriously and will only collect, use, and disclose your personal information in accordance with our privacy policy.
+
+Intellectual Property: Our app and website, including all content and intellectual property, are owned by CareerBuddy. You may not copy, distribute, or use any of our content or intellectual property without our prior written consent.
+
+Termination: We reserve the right to terminate or suspend your account at any time for any reason, without notice or liability.
+
+Disclaimer: We provide our services on an "as is" and "as available" basis, without any warranties or representations of any kind, whether express or implied.
+
+Limitation of Liability: We will not be liable for any damages, including but not limited to, direct, indirect, incidental, or consequential damages arising out of or in connection with your use of our services.
+
+Governing Law: These terms and conditions will be governed by and construed in accordance with the laws of [insert governing law jurisdiction].
+
+If you have any questions or concerns about these terms and conditions, please contact us at [insert contact information].
+
+
+<button onclick="scrolling2();" class="btn3"><i class="bi bi-chevron-double-down"></i></button>
+</section>
+
+
+<br><br><br><br><br><br><br><br>
+
+
+<section class="container">
+
+    <b>Cookies</b>
+    <hr>
+
+
+CareerBuddy ("we," "us," "our") uses cookies on our website to provide a better user experience, improve the functionality of our website, and to analyze website traffic. Cookies are small text files that are placed on your device when you visit our website.
+
+What are cookies?
+
+Cookies are small data files that are placed on your device when you visit a website. They are widely used to enable website functionality, provide a better user experience, and to analyze website traffic. Cookies may also be used to personalize your experience on our website.
+
+What types of cookies do we use?
+
+We use the following types of cookies on our website:
+
+Necessary cookies: These cookies are essential for the operation of our website and enable you to access our website's features and services.
+
+Performance cookies: These cookies allow us to track website traffic and user behavior, which helps us improve the functionality and performance of our website.
+
+Functionality cookies: These cookies enable our website to remember your preferences and provide you with a personalized experience.
+
+Targeting cookies: These cookies may be used to display personalized advertisements based on your browsing behavior.
+
+How can I manage cookies?
+
+You can manage cookies through your browser settings. You can choose to accept or reject cookies, delete cookies, or set your browser to prompt you before accepting a cookie from a website. Please note that disabling cookies may limit your ability to use certain features on our website.
+
+Changes to our Cookies Policy
+
+We may update our Cookies Policy from time to time. Any changes will be posted on this page.
+
+Contact us
+
+    <p style="font-family:georgia;font-size:20px">Created By Denil Kurian , &nbsp; All rights reserved</p>
+    Contact : 9207574484<br>
+    Email : denilkurian@gmail.com
+</section>
+
+
+<script type="text/javascript">
+    function scrolling(){
+   window.scrollTo(0,620);
+    }
+  </script>
+
+<script type="text/javascript">
+    function scrolling2(){
+   window.scrollTo(0,1300);
+    }
+  </script>
+
+
+
+
+
+<!--navbar fixing js code-->
+<script>
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.querySelector('.navbar');
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+
+{% endif %}
+</body>
+</html>

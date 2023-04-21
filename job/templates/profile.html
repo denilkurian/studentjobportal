@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile making</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="/">CareerBuddy</a>
+        {% if request.user.is_authenticated %}
+
+        <ul class="nav navbar-nav"></ul>
+
+
+    </div>
+
+
+
+        <a href="/homepage"><button class="btn btn-light">GoBack</button></a>
+    </div></nav>
+
+
+
+
+{% include 'delete messege.html' %}
+
+
+{% for application in profile %}
+    {% csrf_token %}
+ <div class="flex">
+        <div class="form">
+            <h3>Profile</h3>
+<hr>
+
+
+              <div class="name"><p><b>Name</b>: {{application.name}}</p></div>
+                <div class="email"><p> <b>Email</b>: {{application.email}}</p></div>
+                <div class="phone"><p><b>Contact</b>: {{application.phone}}</p></div>
+            <div class="address"><p><b>Address</b>: {{application.address}}</p></div>
+                <div class="college"><p><b>College</b>: {{application.college}}</p></div>
+                   <div class="college"><p><b>CGPA</b> :{{application.cgpa}}</p></div>
+                <div class="quali"><p><b>Education</b>: {{application.qualification}}</p></div>
+                  <div class="exp"><p><b>Experience</b>: {{application.experience}}</p></div>
+                <div class="skill"><p><b>Skills</b>: {{application.skills}}</p></div>
+                <a href="{{application.resume}}" target="_blank">Resume</a>
+            <a href="{% url 'profile-update' application.id %}"><button id="button-edit" class="btn btn-primary me-3">Make changes</button></a>
+                        <a href="{% url 'profile-delete' application.id %}"><button id="button-delete" class="btn btn-danger">Delete All</button></a>
+
+</div></div>
+{% empty %}
+<br><br><br><br>
+<center><h1 class="profile-header">Hii {{user}} your personal profile seems empty,create a profile thereby employers can find  you easily...</h1>
+    <a href="https://in.indeed.com/career-advice/finding-a-job/how-to-develop-job-profile">Guide From CareerBuddy</a><hr>
+<a href="/profile-create"><button class="btn btn-success">Create</button></a></center>
+
+
+{% endfor %}
+
+{% endif %}
+</body>
+</html>
+

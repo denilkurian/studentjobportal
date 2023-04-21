@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete whole profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/delete.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+</head>
+<body>
+<div class="taskdel">
+<center><form method="post" action="">
+    {% csrf_token %}
+    <h1>Are you sure to delete this profile completely</h1>
+    <h5>You can add another profile if you need</h5>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+    <a href="/profile"><input type="button" value="Cancel"  class="btn btn-light"/></a></form></center>
+</div>
+</body>
+</html>

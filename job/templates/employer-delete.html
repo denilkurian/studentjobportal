@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employer-delete</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<center><form method="post" action="">
+    {% csrf_token %}
+    <h1>Are you sure to delete this form completely</h1>
+    <h5>You can add another form if you need</h5>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+    <a href="/list"><input type="button" value="Cancel"  class="btn btn-light"/></a></form></center>
+{% endif %}
+</body>
+</html>

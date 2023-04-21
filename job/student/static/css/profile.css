@@ -1,0 +1,30 @@
+.form {
+  border: 0px solid black;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  margin-right: 200px;
+  margin-left: 300px;
+  background-color:  white;
+  padding:30px;
+  border-radius:1%;
+  box-shadow: 5px 10px 18px cyan;
+}
+
+ #button-edit {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  transform: translate(-50%, -50%);
+  }
+
+ #button-delete {
+  position: absolute;
+  top: 28%;
+  right: 23%;
+  transform: translate(-50%, -50%);
+  }
+
+.profile-header {
+    font-family:gabriola;
+    color:#541f5e;
+}
